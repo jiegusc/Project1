@@ -7,15 +7,15 @@ class TossingCoin:  # create a class for experiment
     def __init__(self, times, H_probability):   # initiate 2 parameters: run times and the probability of head occurs
         self.times = times
         self.H_probability = H_probability
-        experiment_result = []  # The list of experiment result
-        run_of_head = 0     # Count the number of head occurs.
-        longest_run_of_head = 0     # Count the longest run of heads.
+        experiment_result = []                  # The list of experiment result
+        run_of_head = 0                         # Count the number of head occurs.
+        longest_run_of_head = 0                 # Count the longest run of heads.
         longest_run_of_head_list = []
         # following is the experiment
-        for i in range(self.times):     # run "times" of experiments
+        for i in range(self.times):                     # run "times" of experiments
             experiment_element = random.uniform(0,1)    # generate a random number between 0 and 1
-            if experiment_element < self.H_probability:    # If the # if bigger or equal to the probability of head
-                experiment_result.append("H")               # occurs, append a "H" into result list
+            if experiment_element < self.H_probability:    # If the # if bigger than or equal to the probability of head
+                experiment_result.append("H")               # occurs, append a "H" into the result list
                 run_of_head += 1                            # The # of head + 1
             else:
                 experiment_result.append("T")           # generate a "T" into result list
@@ -37,8 +37,8 @@ class TossingCoin:  # create a class for experiment
 # experiment_result = data.experiment_result              # result is a list
 # print("The number of heads is:", data.num_of_head())
 # print("The longest run of heads is:", data.longestRunOfHead())
-# labels, counts = np.unique(experiment_result, return_counts=True)   # let labels as "T" and "H", counts as # of occurs
-# plt.bar(labels, counts, align="center")                             # let the label of bar shows in the middle
+# labels, counts = np.unique(experiment_result, return_counts=True)   # let labels as "H" and "T", counts as # of occurs
+# plt.bar(labels, counts, align="center")                             # let the label shows in the middle of bars
 # plt.gca().set_xticks(labels)
 # plt.xlabel("Experiment results")
 # plt.ylabel("Counts")
@@ -46,7 +46,7 @@ class TossingCoin:  # create a class for experiment
 
 
 #Q1.a
-# def exp_times(times):   # create a function for implement experiment in specific times.
+# def exp_times(times):   # create a function for implementing experiment in specific times.
 #     head_list = []
 #     for i in range(times):
 #         data = TossingCoin(50, 0.5)
@@ -69,7 +69,7 @@ class TossingCoin:  # create a class for experiment
 # print("The number of heads is:", data.num_of_head())
 # print("The longest run of heads is:", data.longestRunOfHead())
 # labels, counts = np.unique(experiment_result, return_counts=True)   # let labels as "T" and "H", counts as # of occurs
-# plt.bar(labels, counts, align="center")                             # let the label of bar shows in the middle
+# plt.bar(labels, counts, align="center")                             # let the label shows in the middle of bars
 # plt.gca().set_xticks(labels)
 # plt.xlabel("Experiment results")
 # plt.ylabel("Counts")
